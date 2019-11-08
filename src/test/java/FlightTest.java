@@ -39,6 +39,12 @@ public class FlightTest {
     }
 
     @Test
+    public void canAddAPassengerToFlight() {
+        flight.addPassengerToFlight(passenger1);
+        assertEquals(1, flight.getPassengers().size());
+    }
+
+    @Test
     public void canGetRemainingSeats() {
         flight.addPassengerToFlight(passenger1);
         assertEquals(99, flight.getRemainingSeats(plane));
