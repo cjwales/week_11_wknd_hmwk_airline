@@ -8,9 +8,6 @@ public class Flight {
     private String departureAirport;
     private String departureTime;
 
-    public String getDepartureTime() {
-        return departureTime;
-    }
 
     public Flight(String flightNumber, String destination, String departureAirport, String departureTime) {
         this.passengers = new ArrayList<Passenger>();
@@ -18,6 +15,10 @@ public class Flight {
         this.destination = destination;
         this.departureAirport = departureAirport;
         this.departureTime = departureTime;
+    }
+
+    public String getDepartureTime() {
+        return departureTime;
     }
 
     public ArrayList<Passenger> getPassengers() {

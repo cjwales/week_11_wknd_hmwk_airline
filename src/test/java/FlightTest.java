@@ -17,7 +17,7 @@ public class FlightTest {
         flight = new Flight("BA109", "EDI", "GLA", "21:00");
         passenger1 = new Passenger("Jake Stevens", 1);
         plane = new Plane(PlaneType.BOEING747);
-        plane2 = new Plane(PlaneType.TINYPLANE);
+        plane2 = new Plane(PlaneType.PAPERPLANE);
     }
 
     @Test
