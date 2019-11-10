@@ -10,12 +10,14 @@ public class FlightTest {
     Flight flight;
     Passenger passenger1;
     Plane plane;
+    Plane plane2;
 
     @Before
     public void before() {
         flight = new Flight("BA109", "EDI", "GLA", "21:00");
         passenger1 = new Passenger("Jake Stevens", 1);
         plane = new Plane(PlaneType.BOEING747);
+        plane2 = new Plane(PlaneType.TINYPLANE);
     }
 
     @Test
@@ -48,5 +50,17 @@ public class FlightTest {
     public void canGetRemainingSeats() {
         flight.addPassengerToFlight(passenger1);
         assertEquals(99, flight.getRemainingSeats(plane));
+    }
+
+    @Test
+    public void canBookPassenger() {
+        flight.bookPassenger(plane, passenger1);
+        assertEquals(99, flight.getRemainingSeats(plane));
+    }
+
+    @Test
+    public void canNotBookPassengerIfFlightIsFull() {
+        flight.bookPassenger(plane2, passenger1);
+        assertEquals(0, flight.getPassengers().size());
     }
 }

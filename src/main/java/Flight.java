@@ -43,4 +43,10 @@ public class Flight {
     public int getRemainingSeats(Plane plane) {
         return plane.getCapacity() - passengers.size();
     }
+
+    public void bookPassenger(Plane plane, Passenger passenger) {
+        if (getRemainingSeats(plane) > 0) {
+            addPassengerToFlight(passenger);
+        }
+    }
 }
